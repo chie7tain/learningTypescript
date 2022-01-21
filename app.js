@@ -1,25 +1,11 @@
-// typescript infers the return type of a function without having to specify it
-function add(n1, n2) {
-    return n1 + n1;
+// in a situation where you don't know what type to declare a variable as, you can use the unknown type as it does not ensures that it can't just be reassigned to a different type.
+var userInput;
+var userName;
+userInput = "string";
+userInput = "james";
+// as in this case because username is a string but userInput is of type unknown
+// userName = userInput;
+// never type is used to specify what type a function that return anything even undefined is set
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
 }
-// since this function does not return anything, it is inferred to be of type void
-function printResult(numb) {
-    console.log("Result :" + numb);
-}
-printResult(add(5, 12));
-// assigning a return type of undefined to a function would throw an error because it is not possible to infer the return type of a function that does not return anything
-// you can create a function type in two ways
-// 1. using the function keyword and setting it as a value to a variable
-var combineValues;
-// this does not allow typescript to detect the expected behavior of the function
-// 2. specifying the function type of the function you want to store, its parameters and return type and then assigning it to a variable
-var combineValues2;
-// combineValues2 = add;
-function addAndHandle(n1, n2, cb) {
-    var res = n1 + n2;
-    cb(res);
-}
-addAndHandle(20, 30, printResult);
-var test;
-test = function (q, w) { return q + w; };
-console.log(test(1, 5));
