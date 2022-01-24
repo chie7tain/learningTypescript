@@ -12,4 +12,4 @@ const numb2 = 7;
 const result = add(numb1, numb2, true, "Hello ");
 console.log(result);
 const userName = "Max";
-userName = "Anna";
+// userName = "Anna";
