@@ -1,6 +1,6 @@
 // in a situation where you don't know what type to declare a variable as, you can use the unknown type as it does not ensures that it can't just be reassigned to a different type.
 let userInput: unknown;
-let userName: string;
+// let userName: string;
 
 userInput = "string";
 userInput = "james";
