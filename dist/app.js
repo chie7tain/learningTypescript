@@ -1,8 +1,13 @@
 "use strict";
 var Department = /** @class */ (function () {
-    function Department(n) {
+    function Department(id, name) {
+        this.id = id;
+        this.name = name;
+        // name: string;
+        // private props
         this.employees = [];
-        this.name = n;
+        this.id = id;
+        this.name = name;
     }
     Department.prototype.describe = function () {
         console.log("Department:" + this.name);
@@ -16,7 +21,7 @@ var Department = /** @class */ (function () {
     };
     return Department;
 }());
-var accounting = new Department("Accounting");
+var accounting = new Department(12, "Accounting");
 console.log(accounting);
 accounting.describe();
 accounting.addEmployee("Max");
